@@ -1,0 +1,242 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block content %}
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    Trie et recherche
+  </div>
+  <div class="panel-body">
+    <form class="form-horizontal" method="post">
+        {% csrf_token %}
+        {{ form|bootstrap_horizontal }}
+        <div class="form-group">
+          <div class="col-sm-10 col-sm-offset-2">
+            <button type="submit" class="btn btn-success">Rechercher</button>
+          </div>
+        </div>
+    </form>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4>Maintenance à réaliser prochainement</h4>
+  </div>
+  <table class="table table-default table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Organe principal</th>
+        <th>Organe secondaire</th>
+        <th>Elément principal</th>
+        <th>Elément secondaire</th>
+        <th>Opération</th>
+        <th>A faire depuis</th>
+        <th>Périodicité</th>
+        <th>Détails</th>
+        <th>Remarque</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="warning">
+        <td>Contrôles réglementaires</td>
+        <td>Dispositif de collecte des eaux</td>
+        <td>Séparateur d'hydrocarbures</td>
+        <td>Vannes</td>
+        <td>Contrôler les vannes</td>
+        <td>4 jours</td>
+        <td>1 an</td>
+        <td><button class="btn btn-xs btn-default" data-toggle="modal" data-target="#myModal">
+          Détails
+        </button></td>
+        <td><a class="btn btn-xs btn-success" href="{% url 'url_done_intervention' %}">Fait en avance</a></td>
+      </tr>
+      <tr class="warning">
+        <td>Tambour sêcheur</td>
+        <td>Galets</td>
+        <td>Extracteurs</td>
+        <td>Galet</td>
+        <td>Vérifier l'usure et rerégler</td>
+        <td>10 jours</td>
+        <td>2 ans</td>
+        <td><button class="btn btn-xs btn-default" data-toggle="modal" data-target="#myModal">
+          Détails
+        </button></td>
+        <td><a class="btn btn-xs btn-success" href="{% url 'url_done_intervention' %}">Fait en avance</a></td>
+      </tr>
+      <tr class="warning">
+        <td>Prédoseurs</td>
+        <td>Prédoseur AE</td>
+        <td>Extracteurs</td>
+        <td>Moto-réducteur</td>
+        <td>Contrôler le niveau d'huile</td>
+        <td>10 jours</td>
+        <td>6 mois</td>
+        <td><button class="btn btn-xs btn-default" data-toggle="modal" data-target="#myModal">
+          Détails
+        </button></td>
+        <td><a class="btn btn-xs btn-success" href="{% url 'url_done_intervention' %}">Fait en avance</a></td>
+      </tr>
+      <tr>
+        <td>Bandes transporteuses</td>
+        <td>Tapis collecteur</td>
+        <td>Rouleau entraineur</td>
+        <td>2 roulements</td>
+        <td>Graisser les roulements</td>
+        <td>30 jours</td>
+        <td>6 mois</td>
+        <td><button class="btn btn-xs btn-default" data-toggle="modal" data-target="#myModal">
+          Détails
+        </button></td>
+        <td><a class="btn btn-xs btn-success" href="{% url 'url_done_intervention' %}">Fait en avance</a></td>
+      </tr>
+      <tr>
+        <td>Bandes transporteuses</td>
+        <td>Tapis collecteur</td>
+        <td>Rouleau du bas</td>
+        <td>2 roulements</td>
+        <td>Graisser les roulements</td>
+        <td>12 jours</td>
+        <td>6 mois</td>
+        <td><button class="btn btn-xs btn-default" data-toggle="modal" data-target="#myModal">
+          Détails
+        </button></td>
+        <td><a class="btn btn-xs btn-success" href="{% url 'url_done_intervention' %}">Fait en avance</a></td>
+      </tr>
+      <tr>
+        <td>Tour</td>
+        <td>Malaxeur</td>
+        <td>Tôles du fond</td>
+        <td>Tôles du fond</td>
+        <td>Changer les tôles du fond</td>
+        <td>20 jours</td>
+        <td>4 ans</td>
+        <td><button class="btn btn-xs btn-default" data-toggle="modal" data-target="#myModal">
+          Détails
+        </button></td>
+        <td><a class="btn btn-xs btn-success" href="{% url 'url_done_intervention' %}">Fait en avance</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4>Maintenance en cours</h4>
+  </div>
+  <table class="table table-default table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Organe principal</th>
+        <th>Organe secondaire</th>
+        <th>Elément principal</th>
+        <th>Elément secondaire</th>
+        <th>Opération</th>
+        <th>A faire depuis</th>
+        <th>Périodicité</th>
+        <th>Détails</th>
+        <th>Remarque</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="warning">
+        <td>Contrôles réglementaires</td>
+        <td>Dispositif de collecte des eaux</td>
+        <td>Séparateur d'hydrocarbures</td>
+        <td>Vannes</td>
+        <td>Contrôler les vannes</td>
+        <td>4 jours</td>
+        <td>1 an</td>
+        <td><button class="btn btn-xs btn-default" data-toggle="modal" data-target="#myModal">
+          Détails
+        </button></td>
+        <td><a class="btn btn-xs btn-success" href="{% url 'url_done_intervention' %}">Fait</a></td>
+      </tr>
+      <tr>
+        <td>Tambour sêcheur</td>
+        <td>Galets</td>
+        <td>Extracteurs</td>
+        <td>Galet</td>
+        <td>Vérifier l'usure et rerégler</td>
+        <td>Aujourd'hui</td>
+        <td>2 ans</td>
+        <td><button class="btn btn-xs btn-default" data-toggle="modal" data-target="#myModal">
+          Détails
+        </button></td>
+        <td><a class="btn btn-xs btn-success" href="{% url 'url_done_intervention' %}">Fait</a></td>
+      </tr>
+      <tr class="warning">
+        <td>Prédoseurs</td>
+        <td>Prédoseur AE</td>
+        <td>Extracteurs</td>
+        <td>Moto-réducteur</td>
+        <td>Contrôler le niveau d'huile</td>
+        <td>10 jours</td>
+        <td>6 mois</td>
+        <td><button class="btn btn-xs btn-default" data-toggle="modal" data-target="#myModal">
+          Détails
+        </button></td>
+        <td><a class="btn btn-xs btn-success" href="{% url 'url_done_intervention' %}">Fait</a></td>
+      </tr>
+      <tr class="danger">
+        <td>Bandes transporteuses</td>
+        <td>Tapis collecteur</td>
+        <td>Rouleau entraineur</td>
+        <td>2 roulements</td>
+        <td>Graisser les roulements</td>
+        <td>30 jours</td>
+        <td>6 mois</td>
+        <td><button class="btn btn-xs btn-default" data-toggle="modal" data-target="#myModal">
+          Détails
+        </button></td>
+        <td><a class="btn btn-xs btn-success" href="{% url 'url_done_intervention' %}">Fait</a></td>
+      </tr>
+      <tr>
+        <td>Bandes transporteuses</td>
+        <td>Tapis collecteur</td>
+        <td>Rouleau du bas</td>
+        <td>2 roulements</td>
+        <td>Graisser les roulements</td>
+        <td>Aujourd'hui</td>
+        <td>6 mois</td>
+        <td><button class="btn btn-xs btn-default" data-toggle="modal" data-target="#myModal">
+          Détails
+        </button></td>
+        <td><a class="btn btn-xs btn-success" href="{% url 'url_done_intervention' %}">Fait</a></td>
+      </tr>
+      <tr>
+        <td>Tour</td>
+        <td>Malaxeur</td>
+        <td>Tôles du fond</td>
+        <td>Tôles du fond</td>
+        <td>Changer les tôles du fond</td>
+        <td>Aujourd'hui</td>
+        <td>4 ans</td>
+        <td><button class="btn btn-xs btn-default" data-toggle="modal" data-target="#myModal">
+          Détails
+        </button></td>
+        <td><a class="btn btn-xs btn-success" href="{% url 'url_done_intervention' %}">Fait</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Détails de la maintenance</h4>
+      </div>
+      <div class="modal-body">
+        bla bla bla
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

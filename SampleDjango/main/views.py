@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from django.views.generic import FormView
+from django.views.generic import FormView, View
 from django import forms
 
 
@@ -46,3 +46,10 @@ class DoneIntervention(FormView):
     template_name='done_intervention.html'
     form_class = DoneInterventionForm
     success_url = '/interventions/'
+
+
+class LifeReport(View):
+    template_name='life_report.html'
+
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name)

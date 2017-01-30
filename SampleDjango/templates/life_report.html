@@ -1,0 +1,262 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4>Fiche de vie de l'élément "Tambour sécheur"</h4>
+  </div>
+  <div class="panel-body">
+    <div>
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#bruleur" aria-controls="bruleur" role="tab" data-toggle="tab">Brûleur</a></li>
+        <li role="presentation"><a href="#tube" aria-controls="tube" role="tab" data-toggle="tab">Tube</a></li>
+        <li role="presentation"><a href="#ventilateur" aria-controls="ventilateur" role="tab" data-toggle="tab">Ventilateur</a></li>
+      </ul>
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="bruleur">
+          <div class="row" style="margin-top: 10px">
+            <div class="col-md-12">
+              <div class="panel panel-warning">
+                <div class="panel-heading">
+                  <h4>Plan de maintenance</h4>
+                </div>
+                <table class="table table-striped table-hover">
+              <thead>
+                <tr>
+                  <th>A faire le</th>
+                  <th>Elément</th>
+                  <th>Sous-élément</th>
+                  <th>Opération</th>
+                  <th>Jours restants</th>
+                  <th>Ok?</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>27/07/2016</td>
+                  <td></td>
+                  <td></td>
+                  <td>Vidange</td>
+                  <td>9 jours</td>
+                  <td>
+                    <button class="btn btn-small">Ok</button>
+                  </td>
+                </tr>
+                <tr class="danger">
+                  <td>18/07/2016</td>
+                  <td></td>
+                  <td></td>
+                  <td>Nettoyage</td>
+                  <td>Retard 1 jour</td>
+                  <td>
+                    <button class="btn btn-small">Ok</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>27/08/2016</td>
+                  <td></td>
+                  <td></td>
+                  <td>Changement roulements</td>
+                  <td>40 jours</td>
+                  <td>
+                    <button class="btn btn-small">Ok</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <h4>Carnet de vie</h4>
+                </div>
+                <table class="table table-striped table-hover">
+                  <thead>
+                    <tr>
+                      <th>Fait le</th>
+                      <th>Type</th>
+                      <th>Opération</th>
+                      <th>Commentaires</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>30/01/2016</td>
+                      <td>Programmé</td>
+                      <td>Contrôle rendement brûleur</td>
+                      <td>Baisse de rendement mais rien de grave</td>
+                    </tr>
+                    <tr class="warning">
+                      <td>04/05/2016</td>
+                      <td>Fortuis</td>
+                      <td>Changement des pièces XX-XXX</td>
+                      <td>Suite usure</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="tube">
+          <div class="row" style="margin-top: 10px">
+            <div class="col-md-12">
+              <div class="panel panel-warning">
+                <div class="panel-heading">
+                  <h4>Plan de maintenance</h4>
+                </div>
+                <table class="table table-striped table-hover">
+              <thead>
+                <tr>
+                  <th>A faire le</th>
+                  <th>Elément</th>
+                  <th>Sous-élément</th>
+                  <th>Opération</th>
+                  <th>Jours restants</th>
+                  <th>Ok?</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>27/07/2016</td>
+                  <td></td>
+                  <td></td>
+                  <td>Vidange</td>
+                  <td>9 jours</td>
+                  <td>
+                    <button class="btn btn-small">Ok</button>
+                  </td>
+                </tr>
+                <tr class="danger">
+                  <td>18/07/2016</td>
+                  <td></td>
+                  <td></td>
+                  <td>Nettoyage</td>
+                  <td>Retard 1 jour</td>
+                  <td>
+                    <button class="btn btn-small">Ok</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>27/08/2016</td>
+                  <td></td>
+                  <td></td>
+                  <td>Changement roulements</td>
+                  <td>40 jours</td>
+                  <td>
+                    <button class="btn btn-small">Ok</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <h4>Carnet de vie</h4>
+                </div>
+                <table class="table table-striped table-hover">
+                  <thead>
+                    <tr>
+                      <th>Fait le</th>
+                      <th>Type</th>
+                      <th>Opération</th>
+                      <th>Commentaires</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="ventilateur">
+          <div class="row" style="margin-top: 10px">
+            <div class="col-md-12">
+              <div class="panel panel-warning">
+                <div class="panel-heading">
+                  <h4>Plan de maintenance</h4>
+                </div>
+                <table class="table table-striped table-hover">
+              <thead>
+                <tr>
+                  <th>A faire le</th>
+                  <th>Elément</th>
+                  <th>Sous-élément</th>
+                  <th>Opération</th>
+                  <th>Jours restants</th>
+                  <th>Ok?</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>28/07/2016</td>
+                  <td></td>
+                  <td></td>
+                  <td>Nettoyage</td>
+                  <td>15 jours</td>
+                  <td>
+                    <button class="btn btn-small">Ok</button>
+                  </td>
+                </tr>
+                <tr class="danger">
+                  <td>20/07/2016</td>
+                  <td></td>
+                  <td></td>
+                  <td>Graissage</td>
+                  <td>Retard 4 jour</td>
+                  <td>
+                    <button class="btn btn-small">Ok</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <h4>Carnet de vie</h4>
+                </div>
+                <table class="table table-striped table-hover">
+                  <thead>
+                    <tr>
+                      <th>Fait le</th>
+                      <th>Type</th>
+                      <th>Opération</th>
+                      <th>Commentaires</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>30/02/2016</td>
+                      <td>Programmé</td>
+                      <td>Graissage</td>
+                      <td>RAS</td>
+                    </tr>
+                    <tr class="warning">
+                      <td>01/02/2016</td>
+                      <td>Fortuis</td>
+                      <td>Changement moteur</td>
+                      <td>Suite casse</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

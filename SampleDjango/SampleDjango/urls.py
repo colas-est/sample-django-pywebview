@@ -16,10 +16,11 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from main.views import ListIntervention, DoneIntervention
+from main.views import ListIntervention, DoneIntervention, LifeReport
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^interventions/$', ListIntervention.as_view(), name='url_list_intervention'),
-    url(r'^interventions/done/$', DoneIntervention.as_view(), name='url_done_intervention')
+    url(r'^interventions/done/$', DoneIntervention.as_view(), name='url_done_intervention'),
+    url(r'^life_report/$', LifeReport.as_view(), name='url_life_report'),
 ]
